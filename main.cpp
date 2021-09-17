@@ -1,3 +1,10 @@
+/*
+File Name: main.cpp
+Author: Nikolas Cichosz
+nrc170001
+Modification history: Nikolas Cichosz 9/17/2021
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/utsname.h>
@@ -30,6 +37,7 @@ int main(){
     struct utsname uname_pointer;
 
     uname(&uname_pointer);
+    // Gets uname and stores in the pointer
 
     cout << "System name: " << uname_pointer.sysname << endl;
     cout << "Node name: " << uname_pointer.nodename << endl;
@@ -37,6 +45,7 @@ int main(){
     cout << "Version: " << uname_pointer.version << endl;
     cout << "Machine: " << uname_pointer.machine << endl;
     cout << "Domain name via uname: " << uname_pointer.domainname << endl;
+    //display uname data
 
     // To retrieve hostname
 
@@ -44,8 +53,10 @@ int main(){
 
     char hostbuffer2[256];
     int host_entry_two = getdomainname(hostbuffer2, sizeof(hostbuffer2));
+    // gets domain name 
 
     cout << "Domain via getdomainname: " << hostbuffer2 << endl;
+    //displays domain name
 
     host_entry = gethostbyname(hostbuffer);
 
@@ -55,6 +66,7 @@ int main(){
 
     cout << "Host name: " << hostbuffer << endl;
     cout << "Host IP: " << IPbuffer << endl;
+    // displays IP and host name
 
     queue<int> *my_queue_please = new queue<int>;
   
